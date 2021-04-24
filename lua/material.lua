@@ -262,7 +262,7 @@ Group.new('MatchParen', c.cyan, c.none, b) -- The character under the cursor or 
 Group.new('ModeMsg', c.accent, c.none, no) -- 'showmode' message (e.g., "-- INSERT --")
 Group.new('MoreMsg', g.ModeMsg, g.ModeMsg, g.ModeMsg) -- more-prompt
 Group.new('NonText', c.gray, c.none, no) -- '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
-Group.new('Normal', c.text, c.Bg, no) -- normal text
+Group.new('Normal', c.Fg1, c.Bg, no) -- normal text
 Group.new('Pmenu', c.Fg2, c.selection, no) -- Popup menu: normal item.
 Group.new('PmenuSel', c.accent, c.disabled, no) -- Popup menu: selected item.
 Group.new('PmenuSbar', c.Fg2, c.Fg1, no) -- Popup menu: scrollbar.
