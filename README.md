@@ -5,6 +5,8 @@ Theme is inspired by https://github.com/kaicataldo/material.vim
 
 ![screen](/media/Material.png)
 
+NOTE: This branch is less maintained. If you want the latest and greatest use the master branch.
+
 ## Features
 
 material.nvim is meant to be a modern colorscheme written in lua for NeoVim that supports a lot of the new features
