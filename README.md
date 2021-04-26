@@ -31,13 +31,16 @@ Install via your favourite package manager:
 ```vim
 " If you are using Vim-Plug
 Plug 'tjdevries/colorbuddy.nvim'
-Plug 'marko-cerovac/material.nvim'
+Plug 'marko-cerovac/material.nvim', { 'branch': 'colorbuddy' }
 ```
 
 ```lua
 -- If you are using Packer
-use 'tjdevries/colorbuddy.nvim'
-use 'marko-cerovac/material.nvim'
+use {
+      'marko-cerovac/material.nvim',
+      branch = 'colorbuddy',
+      requires = 'tjdevries/colorbuddy.nvim'
+    }
 ```
 Enable the colorscheme:
 ```vim 
