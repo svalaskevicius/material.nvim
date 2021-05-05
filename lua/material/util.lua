@@ -43,37 +43,41 @@ function util.load()
     vim.g.colors_name = "material"
 
     -- Load plugins, treesitter and lsp async
-    local async
-    async = vim.loop.new_async(vim.schedule_wrap(function ()
-        material.loadTerminal()
+    -- local async
+    -- async = vim.loop.new_async(vim.schedule_wrap(function ()
+    --     material.loadTerminal()
 
-        -- imort tables for plugins, treesitter and lsp
-        local plugins = material.loadPlugins()
-        local treesitter = material.loadTreeSitter()
-        local lsp = material.loadLSP()
+    --     -- imort tables for plugins, treesitter and lsp
+    --     local plugins = material.loadPlugins()
+    --     local treesitter = material.loadTreeSitter()
+    --     local lsp = material.loadLSP()
 
-        for group, colors in pairs(plugins) do
-            util.highlight(group, colors)
-        end
+    --     for group, colors in pairs(plugins) do
+    --         util.highlight(group, colors)
+    --     end
 
-        for group, colors in pairs(treesitter) do
-            util.highlight(group, colors)
-        end
+    --     for group, colors in pairs(treesitter) do
+    --         util.highlight(group, colors)
+    --     end
 
-        for group, colors in pairs(lsp) do
-            util.highlight(group, colors)
-        end
-        if vim.g.material_contrast == true then
-            util.contrast()
-        end
-        async:close()
+    --     for group, colors in pairs(lsp) do
+    --         util.highlight(group, colors)
+    --     end
+    --     if vim.g.material_contrast == true then
+    --         util.contrast()
+    --     end
+    --     async:close()
 
-    end))
+    -- end))
 
     -- load base theme
     local editor = material.loadEditor()
     local syntax = material.loadSyntax()
+    local treesitter = material.loadTreeSitter()
+    local plugins = material.loadPlugins()
+    local lsp = material.loadLSP()
 
+    material.loadTerminal()
     for group, colors in pairs(editor) do
         util.highlight(group, colors)
     end
@@ -81,7 +85,22 @@ function util.load()
     for group, colors in pairs(syntax) do
         util.highlight(group, colors)
     end
-    async:send()
+
+    for group, colors in pairs(treesitter) do
+        util.highlight(group, colors)
+    end
+
+    for group, colors in pairs(plugins) do
+        util.highlight(group, colors)
+    end
+
+    for group, colors in pairs(lsp) do
+        util.highlight(group, colors)
+    end
+
+    if vim.g.material_contrast == true then
+        util.contrast()
+    end
 end
 
 return util

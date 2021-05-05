@@ -56,12 +56,15 @@ added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-trees
 Install via your favourite package manager:
 ```vim
 " If you are using Vim-Plug
-Plug 'marko-cerovac/material.nvim'
+Plug 'marko-cerovac/material.nvim', { 'branch' : 'no-async' }
 ```
 
 ```lua
 -- If you are using Packer
-use 'marko-cerovac/material.nvim'
+use {
+    'marko-cerovac/material.nvim',
+    branch = 'no-async'
+}
 ```
 
 ## 🐬 Usage
