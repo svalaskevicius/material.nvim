@@ -40,6 +40,23 @@ if vim.g.material_style == 'darker' then
 	material.disabled =		'#474747'
 	material.accent =		'#FF9800'
 
+elseif vim.g.material_style == 'darker contrast' then
+	-- Darker theme style
+
+	material.bg =			'#1A1A1A'
+	material.bg_alt =		'#0A0A0A'
+	material.fg =			'#B0BEC5'
+	material.text =			'#727272'
+	material.comments =		'#616161'
+	material.selection = 	'#404040'
+	material.contrast =		'#0A0A0A'
+	material.active =		'#323232'
+	material.border =		'#292929'
+	material.line_numbers =	'#424242'
+	material.highlight =	'#3F3F3F'
+	material.disabled =		'#474747'
+	material.accent =		'#FF9800'
+
 elseif vim.g.material_style == 'lighter' then
 
     if vim.g.material_lighter_contrast == true then
